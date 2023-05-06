@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Word {
     final char mask = '-'; // change the mask symbol
-    StringBuilder maskedWord;
+    StringBuilder maskedWord = new StringBuilder();
 
     private final String word;
 
