@@ -1,13 +1,15 @@
-class Stage_ASCII {
-    public final String[] STAGE_HANGMAN = {
-            // stage 1
+import java.util.Random;
+
+class GraphicsMisc {
+    public final String[] GALLOWS = {
+            // stage 1, [0]
             """
              ___
             |   |____
             |________|
              """,
 
-            // stage 2
+            // stage 2, [1]
             """
               _____
               |
@@ -19,7 +21,7 @@ class Stage_ASCII {
             |________|
             """,
 
-            // stage 3
+            // stage 3, [2]
             """
               _____
               |  |
@@ -31,7 +33,7 @@ class Stage_ASCII {
             |________|
             """,
 
-            // stage 4
+            // stage 4, [3]
             """
               _____
               |  |
@@ -43,7 +45,7 @@ class Stage_ASCII {
             |________|
             """,
 
-            // stage 5
+            // stage 5, [4]
             """
               _____
               |  |
@@ -55,7 +57,7 @@ class Stage_ASCII {
             |________|
             """,
 
-            // stage 6
+            // stage 6, [5]
             """
               _____
               |  |
@@ -67,7 +69,7 @@ class Stage_ASCII {
             |________|
             """,
 
-            // stage 7
+            // stage 7, [6]
             """
               _____
               |  |
@@ -79,4 +81,21 @@ class Stage_ASCII {
             |________|
             """
     };
+
+    static String getRandomPhrase() {
+        //генерирует рандомную поощрительную фразу
+        Random random = new Random();
+        String[] phrases = {"You're on fire, keep it up!",
+                "You're a rockstar, don't ever change!",
+                "You must be a magician, because that was magical!",
+                "Holy guacamole, you nailed it!",
+                "You just crushed it like a grape, nice work!",
+                "Well, aren't you just a smarty pants!",
+                "You're a genius, no really, you are!",
+                "Wow, you must have been born to do this!",
+                "You're killing it, keep slaying!",
+                "Go get 'em, tiger!"};
+        int randomPhraseIndex = random.nextInt(phrases.length);
+        return phrases[randomPhraseIndex];
+    }
 }
